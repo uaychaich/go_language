@@ -38,12 +38,12 @@ func main() {
 		c1 complex64 = 5 + 6i
 		// c2 complex128 = complex(5, 6)
 	)
-	var (
-		s1 string = "Uaychai"
-		// s2 byte   = 'c'
-	)
+	var s1 string = "Uaychai"
 
-	fmt.Printf("%t %d %d %9.2f %g %s\n", b1, i1, u1, f1, c1, s1)
+	const cc1 int = 5
+	// cc1 = 7
+
+	fmt.Printf("%t %d %d %9.2f %g %s %d\n", b1, i1, u1, f1, c1, s1, cc1)
 	///////////////////////////////////////////////////////
 	var arr1 [3]int
 	arr1[0] = 5
@@ -67,4 +67,11 @@ func main() {
 	fmt.Printf("%d %d %d %d %d %d %d %d\n", arr2[0], arr3[0], arr5[1][0], slc1[0], slc2[0], slc3[0], slc4[0], slc6[1][0])
 	fmt.Printf("%d %d %d %d %d %d %d %d\n", len(arr1), len(slc2), len(slc4), len(slc5), cap(arr1), cap(slc2), cap(slc4), cap(slc5))
 	///////////////////////////////////////////////////////
+	var add1 int = 99
+	var add2 *int = &add1
+	fmt.Println(add1, &add1, add2, *add2)
+	add1 = 88
+	fmt.Println(add1, &add1, add2, *add2)
+	*add2 = 77
+	fmt.Println(add1, &add1, add2, *add2)
 }

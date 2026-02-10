@@ -47,3 +47,11 @@ func UayFunc8(x int) (somefunc func(int, int) int) {
 	}
 	return
 }
+
+func UayFunc9(x int, y int) (a int) {
+	defer func() {
+		a += 7
+	}()
+	a = x + y
+	return
+}

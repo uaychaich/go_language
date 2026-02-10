@@ -31,5 +31,8 @@ func main() {
 	subfunc := UayFunc8(2)
 	a81 := plusfunc(5, 2)
 	a82 := subfunc(5, 2)
-	fmt.Printf("a81=%v | a82=%v", a81, a82)
+	fmt.Printf("a81=%v | a82=%v\n", a81, a82)
+
+	a91 := UayFunc9(5, 2)
+	fmt.Printf("a91=%v", a91)
 }

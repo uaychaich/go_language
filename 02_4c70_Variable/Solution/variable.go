@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"slices"
+)
 
 var a1 = 5
 var a2 int
@@ -66,6 +69,7 @@ func main() {
 	slc6 := [][]int{{1, 2}, {3, 4}, {5, 6}}
 	fmt.Printf("%d %d %d %d %d %d %d %d\n", arr2[0], arr3[0], arr5[1][0], slc1[0], slc2[0], slc3[0], slc4[0], slc6[1][0])
 	fmt.Printf("%d %d %d %d %d %d %d %d\n", len(arr1), len(slc2), len(slc4), len(slc5), cap(arr1), cap(slc2), cap(slc4), cap(slc5))
+	slc2 = slices.Delete(slc2, 1, 3)
 	///////////////////////////////////////////////////////
 	var add1 int = 99
 	var add2 *int = &add1

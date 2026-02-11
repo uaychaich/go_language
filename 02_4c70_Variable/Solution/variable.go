@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"slices"
 )
 
 var a1 = 5
@@ -57,19 +56,8 @@ func main() {
 	var arr4 [3][2]int
 	arr4[0][0] = 888
 	arr5 := [3][2]int{{1, 2}, {3, 4}, {5, 6}}
-
-	var slc1 []int
-	slc1 = append(slc1, 5)
-	slc2 := []int{7, 5, 3, 9, 5, 1}
-	slc3 := slc2[1:4]
-	slc4 := make([]int, 50, 100)
-	slc4[0] = 77
-	slc5 := new([100]int)[0:50]
-	slc5[0] = 88
-	slc6 := [][]int{{1, 2}, {3, 4}, {5, 6}}
-	fmt.Printf("%d %d %d %d %d %d %d %d\n", arr2[0], arr3[0], arr5[1][0], slc1[0], slc2[0], slc3[0], slc4[0], slc6[1][0])
-	fmt.Printf("%d %d %d %d %d %d %d %d\n", len(arr1), len(slc2), len(slc4), len(slc5), cap(arr1), cap(slc2), cap(slc4), cap(slc5))
-	slc2 = slices.Delete(slc2, 1, 3)
+	fmt.Printf("%d %d %d\n", arr2[0], arr3[0], arr5[1][0])
+	fmt.Printf("%d %d\n", len(arr1), cap(arr1))
 	///////////////////////////////////////////////////////
 	var add1 int = 99
 	var add2 *int = &add1

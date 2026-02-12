@@ -46,18 +46,32 @@ func main() {
 	// sw.Wait()
 	// fmt.Printf("//////////////////////////////////////////////\n")
 	////////////////////////////////////////////////////////////////
+	// var sw sync.WaitGroup
+	// var ch1 chan string = make(chan string)
+	// var ch2 chan int = make(chan int)
+	// sw.Add(1)
+	// go Uayfunc2(ch1, ch2, &sw)
+	// time.Sleep(5 * time.Second)
+	// ch1 <- "Hello Uaychai"
+	// sw.Wait()
+	// sw.Add(1)
+	// go Uayfunc2(ch1, ch2, &sw)
+	// time.Sleep(5 * time.Second)
+	// ch2 <- 500
+	// sw.Wait()
+	// fmt.Printf("//////////////////////////////////////////////\n")
+	////////////////////////////////////////////////////////////////
 	var sw sync.WaitGroup
 	var ch1 chan string = make(chan string)
-	var ch2 chan int = make(chan int)
+	var qch chan int = make(chan int)
 	sw.Add(1)
-	go Uayfunc2(ch1, ch2, &sw)
+
+	go Uayfunc4(ch1, qch, &sw)
 	time.Sleep(5 * time.Second)
-	ch1 <- "Hello Uaychai"
-	sw.Wait()
-	sw.Add(1)
-	go Uayfunc2(ch1, ch2, &sw)
-	time.Sleep(5 * time.Second)
-	ch2 <- 500
+	fmt.Printf("%v\n", <-ch1)
+	fmt.Printf("%v\n", <-ch1)
+	qch <- 1
 	sw.Wait()
 	fmt.Printf("//////////////////////////////////////////////\n")
+	////////////////////////////////////////////////////////////////
 }

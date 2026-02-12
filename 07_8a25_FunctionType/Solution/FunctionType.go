@@ -35,13 +35,16 @@ func main() {
 
 	a91 := UayFunc9(5, 2)
 	fmt.Printf("a91=%v\n", a91)
+
+	a101 := UayFunc10(5, 2)
+	fmt.Printf("a101=%v\n", a101)
 	fmt.Printf("/////////////////////////////////////////////\n")
 	///////////////////////////////////////////////////////////////////////////////
-	var a101 func(int, int) int
-	a101 = func(x int, y int) int { return x + y }
-	fmt.Printf("a101=%v\n", a101(5, 2))
+	var a111 func(int, int) int
+	a111 = func(x int, y int) int { return x + y }
+	fmt.Printf("a111=%v\n", a111(5, 2))
 	fmt.Printf("/////////////////////////////////////////////\n")
-	a102 := func(x int, y int) int { return x + y }
-	fmt.Printf("a102=%v\n", a102(5, 2))
+	a112 := func(x int, y int) int { return x + y }
+	fmt.Printf("a112=%v\n", a112(5, 2))
 	fmt.Printf("/////////////////////////////////////////////\n")
 }

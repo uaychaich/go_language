@@ -55,3 +55,11 @@ func UayFunc9(x int, y int) (a int) {
 	a = x + y
 	return
 }
+
+func UayFunc10(x int, y int) (a int) {
+	defer fmt.Printf("%v\n", 1)
+	defer fmt.Printf("%v\n", 2)
+	defer fmt.Printf("%v\n", 3)
+	a = x + y
+	return
+}

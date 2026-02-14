@@ -1,6 +1,9 @@
 package package1
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type People struct {
 	FirstName string
@@ -8,7 +11,7 @@ type People struct {
 	birthday  time.Time
 }
 
-func (p People) SetBirthday(birthday time.Time) {
+func (p *People) SetBirthday(birthday time.Time) {
 	if birthday.Before(time.Now()) {
 		p.birthday = birthday
 	} else {
@@ -16,20 +19,20 @@ func (p People) SetBirthday(birthday time.Time) {
 	}
 }
 
-func (p People) GetBirthday() time.Time {
+func (p *People) GetBirthday() time.Time {
 	return p.birthday
 }
 
-func (p People) getfullname() string {
+func (p *People) getfullname() string {
 	return p.FirstName + " " + p.LastName
 }
 
-func (p People) GetAllinString() string {
-	return p.getfullname() + " " + p.GetBirthday().Format("2006-01-02 15:04:05")
+func (p *People) GetAllinString() string {
+	return fmt.Sprintf("People\nFullName: %v\nBirthday: %v\n\n", p.getfullname(), p.GetBirthday().String())
 }
 
-func (p People) New(firstname string, lastname string, birthday time.Time) {
-	p.FirstName = firstname
-	p.LastName = lastname
+func NewPeople(firstname string, lastname string, birthday time.Time) *People {
+	p := People{FirstName: firstname, LastName: lastname}
 	p.SetBirthday(birthday)
+	return &p
 }

@@ -2,6 +2,8 @@ package package1
 
 import "fmt"
 
+//This is Animal Structure.
+//Members are Height and Weight
 type Animal struct {
 	Height float64
 	Weight float64
